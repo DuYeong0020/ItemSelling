@@ -81,7 +81,7 @@ public class FormUserController {
         if(findUser != null){ // 존재하는 아이디
 
             bindingResult.reject("overlapUserId", "이미 존재하는 아이디입니다.");
-            return "user/signin";
+            return "user/signup";
         }
         String encodedPassword = passwordEncoder.encode(userDTO.getPassword());
         User user = new User(null, userDTO.getUserId(), userDTO.getName(),encodedPassword, LocalDate.now(), null);
